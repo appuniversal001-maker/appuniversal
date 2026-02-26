@@ -34,14 +34,41 @@ function createViaturaIcon() {
   return L.divIcon({
     className: "bg-transparent border-0",
     html: `
-      <div style="background:rgba(16,185,129,0.9);width:28px;height:28px;border-radius:6px;border:1px solid rgba(52,211,153,0.5);display:flex;align-items:center;justify-content:center;box-shadow:0 0 12px rgba(52,211,153,0.4)">
-        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+      <div style="filter:drop-shadow(0 0 7px rgba(59,130,246,0.85))">
+        <svg width="40" height="64" viewBox="0 0 40 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Corpo principal (curvas suaves estilo Uber) -->
+          <path d="M20,4 C28,4 35,9 35,16 L35,50 C35,57 28,61 20,61 C12,61 5,57 5,50 L5,16 C5,9 12,4 20,4 Z" fill="#1e3a8a"/>
+          <!-- Sirene azul -->
+          <rect x="10" y="5" width="8" height="4" rx="1.5" fill="#60a5fa"/>
+          <!-- Sirene vermelha -->
+          <rect x="22" y="5" width="8" height="4" rx="1.5" fill="#f87171"/>
+          <!-- Para-brisa dianteiro (trapézio) -->
+          <path d="M13,12 L27,12 L26,21 L14,21 Z" fill="#bfdbfe" opacity="0.9"/>
+          <!-- Listra policial branca -->
+          <rect x="5" y="29" width="30" height="3.5" fill="white" opacity="0.9"/>
+          <!-- Janela traseira (trapézio invertido) -->
+          <path d="M14,40 L26,40 L27,50 L13,50 Z" fill="#bfdbfe" opacity="0.8"/>
+          <!-- Espelho esquerdo -->
+          <path d="M5,21 L2,22 L2,27 L5,26 Z" fill="#1e40af"/>
+          <!-- Espelho direito -->
+          <path d="M35,21 L38,22 L38,27 L35,26 Z" fill="#1e40af"/>
+          <!-- Roda dianteira esquerda -->
+          <ellipse cx="4" cy="24" rx="4" ry="5" fill="#0f172a"/>
+          <ellipse cx="4" cy="24" rx="2" ry="2.5" fill="#334155"/>
+          <!-- Roda dianteira direita -->
+          <ellipse cx="36" cy="24" rx="4" ry="5" fill="#0f172a"/>
+          <ellipse cx="36" cy="24" rx="2" ry="2.5" fill="#334155"/>
+          <!-- Roda traseira esquerda -->
+          <ellipse cx="4" cy="46" rx="4" ry="5" fill="#0f172a"/>
+          <ellipse cx="4" cy="46" rx="2" ry="2.5" fill="#334155"/>
+          <!-- Roda traseira direita -->
+          <ellipse cx="36" cy="46" rx="4" ry="5" fill="#0f172a"/>
+          <ellipse cx="36" cy="46" rx="2" ry="2.5" fill="#334155"/>
         </svg>
       </div>
     `,
-    iconSize: [28, 28],
-    iconAnchor: [14, 14],
+    iconSize: [40, 64],
+    iconAnchor: [20, 32],
   });
 }
 

@@ -23,15 +23,18 @@ function Row({ label, value, mono, color }: { label: string; value: string | Rea
     );
 }
 
+// Fixed heights to avoid SSR hydration mismatch (no Math.random() on render)
+const WAVE_HEIGHTS = [8, 14, 20, 10, 18, 6, 22, 12, 16, 8, 20, 14, 10, 18, 24, 8, 16, 12, 20, 10];
+
 function AudioWave() {
     return (
         <div className="flex items-center gap-[3px] h-6">
-            {Array.from({ length: 20 }).map((_, i) => (
+            {WAVE_HEIGHTS.map((h, i) => (
                 <div
                     key={i}
                     className="w-0.5 bg-green-400 rounded-full"
                     style={{
-                        height: `${Math.random() * 20 + 4}px`,
+                        height: `${h}px`,
                         animationDelay: `${i * 0.05}s`,
                         animation: "waveBar 0.8s ease-in-out infinite alternate",
                     }}
